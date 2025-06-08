@@ -1,0 +1,126 @@
+/*this is just to see the actual elements better when debugging*/
+/* * {
+	border: 1px solid red;
+} */
+
+body {
+	background-color: white;
+	color: #666666;
+	font-family: Arial, Helvetica, sans-serif;
+	margin: 0;
+}
+
+/* width set to 80% with 600px minimum. grid display is used to position
+the child elements inside the layout. */
+#wrapper {
+	display: grid;
+	grid-template-columns: 200px 1fr;
+	grid-template-rows: auto 1fr auto;
+	grid-template-areas: "header header" "nav content" "nav footer";
+	width: 80%;
+	margin: 50px auto;
+	background: white;
+	min-width: 600px;
+}
+
+
+/*nav has a fixed width, and the content varies using the calc() function*/
+nav {
+	grid-area: nav;
+	background-color: #99ccff;
+	padding: 20px;
+	width: 200px;
+	box-sizing: border-box;
+}
+
+#content {
+	grid-area: content;
+	padding: 20px;
+	width: calc(100% - 200px);
+	box-sizing: border-box;
+	display: flex;
+	flex-direction: column;
+}
+
+
+footer {
+	grid-area: footer;
+	padding: 20px;
+	text-align: left;
+}
+
+nav ul {
+  	list-style-type: none;
+  	padding: 0; 	/*nav links shift to right without this*/
+}
+
+
+/*just basic text styling and formatting*/
+nav a {
+	text-decoration: none;
+	font-weight: bold;
+	font-size: 24px;
+	color: #2e066d;
+}
+
+/*makes white on mouse hover*/
+nav a:hover {
+  	color: #ffffff;
+}
+
+/*For special bullet points*/
+#content li {
+	list-style-image: url("marker.gif");
+}
+
+
+
+/*Only change was adding the image to the background and making it fit.
+last four in ruleset used for this. */
+h1 {
+	margin: 0;
+	padding: 20px;
+	background-color: #003366;
+	color: white;
+	font-family: Georgia, "Times New Roman", serif;
+	font-size: 250%;	/*arbitrary percentage*/
+	/*These four make sure the picture doesn't start repeating or breaking*/
+	background-image: url("sunset.jpg");
+	background-size: cover;
+	background-position: center;
+	background-repeat: no-repeat;
+}
+
+/*This is for the page background gradient using the provided image
+and solid color below the image.*/
+body {
+	background-image: url("ptrbackground.jpg");
+	background-repeat: repeat-x;
+	background-size: auto;
+	background-color: #00569f;
+}
+
+h2 {
+	color: #3399CC;
+	font-size: 200%;
+	font-family: Georgia, "Times New Roman", serif;
+}
+
+/*highlight resort name*/
+.resort {
+	color: #003366;
+}
+
+header {
+  	grid-area: header;
+}
+
+img {
+	width: 80%;
+	height: auto;
+}
+
+/*just to remove underlines from footer link*/
+a {
+	text-decoration: none;
+}
